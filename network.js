@@ -187,28 +187,6 @@ class CNNVis {
 
   drawLayers(){
   	const layerData = this.data["nodeImages"].slice(1, this.data["nodeImages"].length-1);
-    //each layer
-  	const layerDiv = this.canvas.selectAll("div.layers")
-  		.data(layerData).enter()
-  		.append("div")
-  		.attr("class", "layers")
-  		.attr("id", function(d,i){return "layer_"+(i+1);})
-  		.style({
-  			position: "absolute",
-  			left: function(d,i){return (i+1)*unitWidth+"px";}});
-
-    //each node on layer
-  	const filterDiv = layerDiv.selectAll("div.filters")
-  		.data(function(d){return d;}).enter()
-  		.append("div")
-  		.attr("class", "filters")
-  		.attr("id", function(d,i){return "filter_"+i;})
-  		.style({
-  			position: "absolute",
-  			top: function(d,i){return (i*nodeSize*2-d3.select(d).attr("width")/2)+"px";},
-  			left: function(d){return (nodeSize*4-d3.select(d).attr("height")/2)+"px"}});
-
-  	this.nodeGraph = filterDiv.append("div");
 
     //draw the input layer
     const inputLayer = this.canvas.selectAll("div")
@@ -221,6 +199,29 @@ class CNNVis {
   						left: function(d){return (nodeSize-d3.select(d).attr("width")/2)+"px"; }});
   	inputLayer.append(function(d){return d;});
 
+    //hidden layer
+  	const layerDiv = this.canvas.selectAll("div.layers")
+  		.data(layerData).enter()
+  		.append("div")
+  		.attr("class", "layers")
+  		.attr("id", function(d,i){return "layer_"+(i+1);})
+  		.style({
+  			position: "absolute",
+  			left: function(d,i){return (i+1)*unitWidth+"px";}});
+
+    //each node on hidden layer
+  	const filterDiv = layerDiv.selectAll("div.filters")
+  		.data(function(d){return d;}).enter()
+  		.append("div")
+  		.attr("class", "filters")
+  		.attr("id", function(d,i){return "filter_"+i;})
+  		.style({
+  			position: "absolute",
+  			top: function(d,i){return (i*nodeSize*2-d3.select(d).attr("width")/2)+"px";},
+  			left: function(d){return (nodeSize*4-d3.select(d).attr("height")/2)+"px"}});
+
+  	this.nodeGraph = filterDiv.append("div");
+
     //draw the output layer
   	const outputData = this.data["nodeImages"][this.data["nodeImages"].length-1];
   	const outputNode = this.canvas.selectAll("div.outputNode")
@@ -231,8 +232,6 @@ class CNNVis {
   						top: function(d,i){return (i*nodeSize*2 + (height/2 - nodeSize*2*outputData.length/2)-d3.select(d).attr("height")/2 )+"px";},
   						right: function(d,i){return (nodeSize*2-d3.select(d).attr("width")/2)+"px";}});
   	outputNode.append(function(d){return d;});
-
-
   }
 
   drawPaths(){
