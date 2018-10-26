@@ -1,0 +1,15 @@
+[Show/hide message details.] TypeError: this is undefined[Learn More] cnnVis.js:272:1
+drawPaths/</</<
+http://localhost:8080/cnnVis.js:272:1
+forEach self-hosted:268:13 drawPaths/</<
+http://localhost:8080/cnnVis.js:257:9
+forEach self-hosted:268:13 drawPaths/<
+http://localhost:8080/cnnVis.js:248:8
+forEach self-hosted:268:13 drawPaths
+http://localhost:8080/cnnVis.js:247:5
+CNNVis
+http://localhost:8080/cnnVis.js:184:4
+iter
+http://localhost:8080/cnnVis.js:126:26
+loadSample
+http://localhost:8080/cnnVis.js:111:5
