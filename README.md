@@ -4,6 +4,12 @@ Partial implementation of paper: ReVACNN: Real-Time Visual Analytics for Convolu
 
 Implement the TSNE scatter with interactive function and neural network visualization without interactive function.
 
+The files network.js and network.html are for CNN visualization.
+
+The files tsne.js and tsne.html are for TSNE visualization.
+
+The utility and library is in src folder.
+
 ## Run on your
 **Note**: Running this requires [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which includes [npm](https://npmjs.org)) on your system.
 
