@@ -1,5 +1,5 @@
-const loadInterval = 40;
-const visDivide = 40;
+const loadInterval = 10;
+const visDivide = 10;
 const opacityControl = 10;
 const widthMinControl = 3;
 const widthMaxControl = 12;

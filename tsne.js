@@ -24,7 +24,7 @@ class tsnejscatter {
       iter(this.data, tSNEInstance, graph.xscale, graph.yscale, graph.graphInteract,
         graph.canvas, graph.scatters, graph.xAxis, graph.yAxis);
 
-      if (tSNEInstance.iter > 1000) {
+      if (tSNEInstance.iter > 3000) {
         clearInterval(motion);
       }
     }, 0);
