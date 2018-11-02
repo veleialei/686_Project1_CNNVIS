@@ -15,7 +15,7 @@ The utility and library is in src folder.
 
 ```bash
 # Clone the repository
-$ git clone https://github.com/davianlab/deepVis.git
+$ git clone https://github.com/veleialei/686_Project1_CNNVIS.git
 # Go into the repository
 # Install dependencies and run the app http-server
 $ npm install
